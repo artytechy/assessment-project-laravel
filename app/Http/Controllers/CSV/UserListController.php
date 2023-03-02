@@ -15,6 +15,10 @@ class UserListController extends Controller
      */
     public function fileImport(Request $request)
     {
+        $request->validate([
+            'file' => 'required|mimes:csv',
+        ]);
+
         $import = new UsersListImport();
 
         Excel::import($import, $request->file('file')->store('temp'));

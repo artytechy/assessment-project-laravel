@@ -30,7 +30,8 @@
             <form @submit.prevent="importData">
                 <div class="row">
                     <label for="">Choose CSV Datasheet
-                        <input @input="addFile" type="file" class="form-control">
+                        <input @input="addFile" type="file" class="form-control" :class="form.errors.file  ? 'is-invalid' : ''">
+                        <span v-if="form.errors.file" class="text-danger">{{ form.errors.file }}</span>
                     </label>
                 </div>
                 <button class="btn btn-primary mt-2">Upload</button>
@@ -57,7 +58,7 @@ const data = reactive({
 })
 
 const form = useForm({
-    file: null
+    file: null,
 })
 
 const search = useForm({
@@ -68,11 +69,7 @@ const closeModal = () => {
     data.showModal = false
 }
 
-const importData = () => form.post(route('file-import'), {
-    onSuccess: () => form.reset(),
-    preserveState: false,
-    preserveScroll: true
-})
+const importData = () => form.post(route('file-import'), { onSuccess: () => closeModal() })
 
 const searchItem = () => search.get(route('dashboard.index'), {preserveState: true, preserveScroll: true})
 

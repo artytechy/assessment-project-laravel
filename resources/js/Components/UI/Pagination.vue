@@ -3,7 +3,7 @@
         <li v-for="(link, index) in links" :key="index" class="page-item" :class="{'active' : link.active}">
             <Link
                 v-html="link.label"
-                :href="link.url"
+                :href="link.url ?? '#'"
                 class="page-link" />
         </li>
     </ul>
