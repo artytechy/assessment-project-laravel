@@ -6,7 +6,7 @@
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <Link class="btn btn-danger" :href="route('logout')" method="delete" as="button">Logout</Link>
+            <Link class="btn btn-danger" :href="route('logout')" method="delete" as="button"><i class="fa-solid fa-right-from-bracket"></i> Logout</Link>
         </div>
     </nav>
 </template>

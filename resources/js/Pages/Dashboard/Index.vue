@@ -3,7 +3,7 @@
         <template v-slot:title>
             <span class="d-flex justify-content-between">
                 <span class="mt-1">Dashboard</span>
-                <button class="btn btn-primary btn-sm" @click="data.showModal = true">Import CSV</button>
+                <button class="btn btn-primary btn-sm" @click="data.showModal = true"><i class="fa-solid fa-file-import"></i> Import CSV</button>
             </span>
         </template>
 
@@ -34,7 +34,7 @@
                         <span v-if="form.errors.file" class="text-danger">{{ form.errors.file }}</span>
                     </label>
                 </div>
-                <button class="btn btn-primary mt-2">Upload</button>
+                <button class="btn btn-primary mt-2"><i class="fa-solid fa-upload"></i> Upload</button>
             </form>
         </BaseModal>
     </BaseCard>
