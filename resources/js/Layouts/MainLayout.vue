@@ -20,5 +20,5 @@ watch(() => usePage().props.flash, flash => {
     if (flash.success) {
         $toast.success(flash.success, options);
     }
-}, {deep: true})
+}, {immediate: true})
 </script>
